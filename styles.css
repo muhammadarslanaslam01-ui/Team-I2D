@@ -570,15 +570,34 @@ section {
 }
 
 .team-avatar {
+    position: relative;
     width: 96px;
     height: 96px;
     border-radius: 50%;
     margin: 0 auto 1.5rem;
     overflow: hidden;
+    background: var(--bg);
     box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
 }
 
 .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Shown only if the photo file fails to load, so the card never renders empty */
+.avatar-initials {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+
+.team-avatar.avatar-missing img { display: none; }
+.team-avatar.avatar-missing .avatar-initials { display: flex; }
 .team-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; margin-bottom: 0.25rem; }
 .team-role { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.75rem; }
 
@@ -638,4 +657,12 @@ section {
     .mobile-menu-btn { display: block; }
     .hero-stats { flex-direction: column; gap: 1.5rem; }
     .process-step { grid-template-columns: 1fr; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
