@@ -7,6 +7,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="./styles.css">
+    <style>
+        .problem-section {
+            background: var(--white);
+        }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .problem-card {
+            background: var(--bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .problem-card:hover::before {
+            transform: scaleX(1);
+        }
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 118, 110, 0.1);
+        }
+        .problem-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+        .problem-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+        .problem-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 4rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-box::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .highlight-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .highlight-box h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+    </style>
 </head>
 <body>
 
@@ -32,59 +132,77 @@
             <div class="badge">chemPLANT 2026 Competition</div>
             <h1>Beyond PET:<br>Unlocking <span>High-Performance PEF</span><br>from Cellulosic Biomass</h1>
             <p class="hero-subtitle">
-                A sustainable biorefinery concept converting renewable wood-based cellulose to 2,5-furandicarboxylic acid (FDCA) for next-generation polyester production.
+                A sustainable biorefinery concept converting renewable wood-based cellulose to 2,5-furandicarboxylic acid (FDCA) for next-generation polyester production — reducing CO₂ emissions by 45–55%.
             </p>
             <div class="hero-stats">
                 <div class="stat-item">
                     <div class="stat-number">45–55%</div>
-                    <div class="stat-label">CO₂ Reduction</div>
+                    <div class="stat-label">% CO₂ Reduction</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">10×</div>
-                    <div class="stat-label">Lower O₂ Permeability</div>
+                    <div class="stat-label">× Lower O₂ Permeability</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">100%</div>
-                    <div class="stat-label">Bio-based Carbon</div>
+                    <div class="stat-label">% Bio-based Carbon</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
+    <!-- The Challenge Section -->
+    <section class="problem-section" id="problem">
         <div class="section-header">
-            <span class="section-tag">Executive Summary</span>
-            <h2 class="section-title">Biorefinery Project Architecture</h2>
-            <p class="section-desc">An end-to-end chemical engineering solution designed to decarbonize the global polyester value chain.</p>
+            <span class="section-tag">The Challenge</span>
+            <h2 class="section-title">Why We Need to Move Beyond PET</h2>
+            <p class="section-desc">
+                Global plastic production reached 400 million tonnes in 2022, with polyesters representing nearly one-quarter. 
+                PET's fossil-derived origin and end-of-life crisis demand a sustainable alternative.
+            </p>
         </div>
 
-        <div class="overview-grid">
-            <div class="overview-card">
-                <div>
-                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;">Chemical Route</span>
-                    <h3 style="margin-top: 0.4rem;">Closed-Loop Biorefinery Process</h3>
-                    <p>An innovative continuous 4-block process converting dissolving pulp into polymer-grade FDCA. By replacing mineral acids with recycled FDCA catalysis and utilizing an internal GVL solvent loop regenerated from levulinic acid, the process eliminates hazardous halide waste and optimizes atomic economy.</p>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3v18h18"/>
+                        <path d="M18 17V9"/>
+                        <path d="M13 17V5"/>
+                        <path d="M8 17v-3"/>
+                    </svg>
                 </div>
-                <a href="technology.html" class="card-link">View Engineering Flowsheet →</a>
+                <h3>400M Tonnes/year</h3>
+                <p>Global plastic production continues to rise, with the vast majority derived from fossil fuels and lacking adequate recycling infrastructure.</p>
             </div>
 
-            <div class="overview-card">
-                <div>
-                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;">Material Science</span>
-                    <h3 style="margin-top: 0.4rem;">Superior Barrier & Thermo-Mechanical Specs</h3>
-                    <p>Poly(ethylene furanoate) (PEF) outperforms petroleum PET across every packaging benchmark: offering a 10× reduction in oxygen transmission, 19× lower CO₂ permeability, higher stiffness (3.28 GPa), and higher glass transition temperatures (86°C) while cutting life-cycle emissions by up to 55%.</p>
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                        <line x1="12" y1="22.08" x2="12" y2="12"/>
+                    </svg>
                 </div>
-                <a href="performance.html" class="card-link">Explore Comparative Analysis →</a>
+                <h3>4 kg CO₂ eq/kg</h3>
+                <p>PET's cradle-to-grave carbon footprint is substantial, synthesized exclusively from petroleum-derived TPA and MEG.</p>
             </div>
 
-            <div class="overview-card">
-                <div>
-                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;">Academic Governance</span>
-                    <h3 style="margin-top: 0.4rem;">Team I2D-UULM & Institute Guidance</h3>
-                    <p>Developed for the chemPLANT 2026 competition by student researchers under the scientific supervision of Professor Dr.-Ing. Robert Güttel and faculty mentors at the Institute of Chemical Engineering, Universität Ulm, Germany.</p>
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                    </svg>
                 </div>
-                <a href="team.html" class="card-link">Meet the Researchers →</a>
+                <h3>End-of-Life Crisis</h3>
+                <p>Most end-of-life PET is landfilled, incinerated, or lost to the environment — the absence of recycling infrastructure is critical.</p>
             </div>
+        </div>
+
+        <div class="highlight-box">
+            <span class="highlight-number">70M</span>
+            <h3>Tonnes of PET produced annually — our target market for replacement with sustainable PEF</h3>
         </div>
     </section>
 
