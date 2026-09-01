@@ -54,33 +54,36 @@
     <section>
         <div class="section-header">
             <span class="section-tag">Executive Summary</span>
-            <h2 class="section-title">Project Architecture</h2>
-            <p class="section-desc">Explore the engineering, analytical comparisons, and academic background behind our sustainable biorefinery design.</p>
+            <h2 class="section-title">Biorefinery Project Architecture</h2>
+            <p class="section-desc">An end-to-end chemical engineering solution designed to decarbonize the global polyester value chain.</p>
         </div>
 
         <div class="overview-grid">
             <div class="overview-card">
                 <div>
-                    <h3>Biorefinery Technology</h3>
-                    <p>A 4-block process integrating enzymatic hydrolysis, SMB chromatography, acid-free dehydration, and catalytic oxidation in a closed solvent loop.</p>
+                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;">Chemical Route</span>
+                    <h3 style="margin-top: 0.4rem;">Closed-Loop Biorefinery Process</h3>
+                    <p>An innovative continuous 4-block process converting dissolving pulp into polymer-grade FDCA. By replacing mineral acids with recycled FDCA catalysis and utilizing an internal GVL solvent loop regenerated from levulinic acid, the process eliminates hazardous halide waste and optimizes atomic economy.</p>
                 </div>
-                <a href="technology.html" class="card-link">Explore Process Design →</a>
+                <a href="technology.html" class="card-link">View Engineering Flowsheet →</a>
             </div>
 
             <div class="overview-card">
                 <div>
-                    <h3>Material & Market Metrics</h3>
-                    <p>Technical performance metrics comparing PEF with petroleum-based PET, accompanied by global market growth models up to 2035.</p>
+                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;">Material Science</span>
+                    <h3 style="margin-top: 0.4rem;">Superior Barrier & Thermo-Mechanical Specs</h3>
+                    <p>Poly(ethylene furanoate) (PEF) outperforms petroleum PET across every packaging benchmark: offering a 10× reduction in oxygen transmission, 19× lower CO₂ permeability, higher stiffness (3.28 GPa), and higher glass transition temperatures (86°C) while cutting life-cycle emissions by up to 55%.</p>
                 </div>
-                <a href="performance.html" class="card-link">View Performance Data →</a>
+                <a href="performance.html" class="card-link">Explore Comparative Analysis →</a>
             </div>
 
             <div class="overview-card">
                 <div>
-                    <h3>Team & Institution</h3>
-                    <p>Meet Team I2D-UULM and the faculty supervisors at the Institute of Chemical Engineering, Universität Ulm.</p>
+                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;">Academic Governance</span>
+                    <h3 style="margin-top: 0.4rem;">Team I2D-UULM & Institute Guidance</h3>
+                    <p>Developed for the chemPLANT 2026 competition by student researchers under the scientific supervision of Professor Dr.-Ing. Robert Güttel and faculty mentors at the Institute of Chemical Engineering, Universität Ulm, Germany.</p>
                 </div>
-                <a href="team.html" class="card-link">Meet the Team →</a>
+                <a href="team.html" class="card-link">Meet the Researchers →</a>
             </div>
         </div>
     </section>
@@ -100,12 +103,10 @@
     </footer>
 
     <script>
-        // Mobile Navigation
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
         mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-        // Three.js 3D Monomer Animation
         const canvasContainer = document.getElementById('canvas-container');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
