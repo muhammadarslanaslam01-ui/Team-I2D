@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology &amp; Process | Beyond PET</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+            chemPLANT 2026
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="technology.html" class="active">Technology &amp; Process</a></li>
+            <li><a href="performance.html">Performance &amp; Market</a></li>
+            <li><a href="team.html">Team &amp; Institute</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </nav>
+
+    <header class="page-header">
+        <span class="badge">Engineering Design</span>
+        <h1>From Cellulose to FDCA</h1>
+        <p>A four-block integrated biorefinery pathway converting dissolving pulp to polymer-grade FDCA with full solvent and catalyst recovery.</p>
+    </header>
+
+    <section>
+        <div class="section-header">
+            <span class="section-tag">Process Flow</span>
+            <h2 class="section-title">The Four Transformation Blocks</h2>
+            <p class="section-desc">Step-by-step chemical and enzymatic conversion pathway.</p>
+        </div>
+
+        <div class="process-flow">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Enzymatic Hydrolysis <span class="step-badge">Block 1</span></h3>
+                    <p>Dissolving pulp is slurried to 20 wt% cellulose and hydrolyzed to glucose over Cellic® CTec3 cellulase, reaching 90% conversion. Inert xylan and unreacted cellulose are filtered off, and ultrafiltration recovers 97% of the enzyme for reuse.</p>
+                    <div class="step-details">
+                        <div class="detail-chip">50°C</div>
+                        <div class="detail-chip">pH 4.8</div>
+                        <div class="detail-chip">120 h Residence</div>
+                        <div class="detail-chip">15 FPU/g Loading</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Isomerization &amp; SMB Separation <span class="step-badge">Block 2</span></h3>
+                    <p>Glucose is isomerized over immobilized glucose isomerase on SiO₂, reaching a 42% conversion per pass. Simulated Moving Bed (SMB) chromatography on a Ca²⁺ cation-exchange resin isolates 96 wt% fructose, recycling the glucose-rich raffinate back to the reactor.</p>
+                    <div class="step-details">
+                        <div class="detail-chip">60°C</div>
+                        <div class="detail-chip">Glucose Isomerase on SiO₂</div>
+                        <div class="detail-chip">96% Fructose Purity</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>HMF Synthesis <span class="step-badge">Block 3</span></h3>
+                    <p>Fructose is dehydrated to 5-hydroxymethylfurfural (HMF) in a 50:50 GVL/water medium, self-catalysed by recycled FDCA instead of a mineral acid. The liquid-full column reactor converts 95.6% of the feed at 70% single-pass yield to HMF before humins are removed over activated carbon.</p>
+                    <div class="step-details">
+                        <div class="detail-chip">180°C</div>
+                        <div class="detail-chip">FDCA-Catalysed (Acid-Free)</div>
+                        <div class="detail-chip">50:50 GVL/Water</div>
+                        <div class="detail-chip">70% HMF Yield</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h3>FDCA Oxidation <span class="step-badge">Block 4</span></h3>
+                    <p>HMF is oxidized to FDCA over base-free 5 wt% Pt/C in a cooled multitubular packed bed at 91% single-pass yield. The liquor is hot-filtered, crystallized down to 8°C, washed, and dried. Solvent is recovered via distillation, and levulinic acid by-product is hydrogenated back to GVL.</p>
+                    <div class="step-details">
+                        <div class="detail-chip">110°C</div>
+                        <div class="detail-chip">40 bar O₂</div>
+                        <div class="detail-chip">Base-Free Pt/C</div>
+                        <div class="detail-chip">91% Single-Pass Yield</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--white);">
+        <div class="section-header">
+            <span class="section-tag">Inside the Flowsheet</span>
+            <h2 class="section-title">Three Transformations, One Closed Loop</h2>
+            <p class="section-desc">The solvent and catalyst are both regenerated and recycled inside the plant.</p>
+        </div>
+
+        <div class="chain-wrap">
+            <div class="chain-scroll">
+                <svg class="chain-svg" viewBox="0 0 1180 470" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="ch-fwd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f766e"/></marker>
+                        <marker id="ch-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker>
+                    </defs>
+                    <path d="M1010,146 C 1010,78 410,78 410,146" class="chain-loop" marker-end="url(#ch-loop)"/>
+                    <text x="710.0" y="64" text-anchor="middle" class="chain-loop-label">50:50 GVL/water solvent recovered and recycled</text>
+                    <text x="710.0" y="82" text-anchor="middle" class="chain-loop-sub">plant remakes GVL from by-product levulinic acid</text>
+                    <path d="M1010,274 C 1010,372 560.0,372 560.0,280" class="chain-loop" marker-end="url(#ch-loop)"/>
+                    <text x="785.0" y="398" text-anchor="middle" class="chain-loop-label">FDCA is recycled as the dehydration catalyst</text>
+                    <text x="785.0" y="417" text-anchor="middle" class="chain-loop-sub">zero mineral chloride or sulphate input</text>
+                    <line x1="184" y1="210" x2="342" y2="210" class="chain-arrow" marker-end="url(#ch-fwd)"/>
+                    <text x="263.0" y="176" text-anchor="middle" class="chain-step">Sugar platform</text>
+                    <text x="263.0" y="240" text-anchor="middle" class="chain-step-note">hydrolysis + SMB</text>
+                    <line x1="484" y1="210" x2="642" y2="210" class="chain-arrow" marker-end="url(#ch-fwd)"/>
+                    <text x="563.0" y="158" text-anchor="middle" class="chain-yield">70%</text>
+                    <text x="563.0" y="178" text-anchor="middle" class="chain-step">Dehydration</text>
+                    <text x="563.0" y="240" text-anchor="middle" class="chain-step-note">180°C</text>
+                    <line x1="784" y1="210" x2="942" y2="210" class="chain-arrow" marker-end="url(#ch-fwd)"/>
+                    <text x="863.0" y="158" text-anchor="middle" class="chain-yield">91%</text>
+                    <text x="863.0" y="178" text-anchor="middle" class="chain-step">Oxidation</text>
+                    <text x="863.0" y="240" text-anchor="middle" class="chain-step-note">110°C, 40 bar O₂</text>
+                    <circle cx="110" cy="210" r="64" class="chain-node-feed"/>
+                    <text x="110" y="212" text-anchor="middle" class="chain-name">Wood Pulp</text>
+                    <text x="110" y="234" text-anchor="middle" class="chain-sub">dissolving pulp</text>
+                    <circle cx="410" cy="210" r="64" class="chain-node"/>
+                    <text x="410" y="212" text-anchor="middle" class="chain-name">Fructose</text>
+                    <text x="410" y="234" text-anchor="middle" class="chain-sub">96 wt% purity</text>
+                    <circle cx="710" cy="210" r="64" class="chain-node"/>
+                    <text x="710" y="212" text-anchor="middle" class="chain-name">HMF</text>
+                    <text x="710" y="234" text-anchor="middle" class="chain-sub">furan platform</text>
+                    <circle cx="1010" cy="210" r="64" class="chain-node-product"/>
+                    <text x="1010" y="212" text-anchor="middle" class="chain-name-invert">FDCA</text>
+                    <text x="1010" y="234" text-anchor="middle" class="chain-sub-invert">polymer grade</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo">Beyond PET</div>
+        <p>Unlocking High-Performance PEF from Cellulosic Biomass — Universität Ulm</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="technology.html">Technology</a>
+            <a href="performance.html">Performance</a>
+            <a href="team.html">Team</a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Team I2D-UULM — chemPLANT Competition | Universität Ulm</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+    </script>
+</body>
+</html>
