@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond PET | chemPLANT 2026 | Universität Ulm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+            chemPLANT 2026
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="technology.html">Technology & Process</a></li>
+            <li><a href="performance.html">Performance & Market</a></li>
+            <li><a href="team.html">Team & Institute</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </nav>
+
+    <section class="hero">
+        <div id="canvas-container"></div>
+        <div class="hero-content">
+            <div class="badge">chemPLANT 2026 Competition</div>
+            <h1>Beyond PET:<br>Unlocking <span>High-Performance PEF</span><br>from Cellulosic Biomass</h1>
+            <p class="hero-subtitle">
+                A sustainable biorefinery concept converting renewable wood-based cellulose to 2,5-furandicarboxylic acid (FDCA) for next-generation polyester production.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">45–55%</div>
+                    <div class="stat-label">CO₂ Reduction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10×</div>
+                    <div class="stat-label">Lower O₂ Permeability</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Bio-based Carbon</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-header">
+            <span class="section-tag">Executive Summary</span>
+            <h2 class="section-title">Project Architecture</h2>
+            <p class="section-desc">Explore the engineering, analytical comparisons, and academic background behind our sustainable biorefinery design.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-card">
+                <div>
+                    <h3>Biorefinery Technology</h3>
+                    <p>A 4-block process integrating enzymatic hydrolysis, SMB chromatography, acid-free dehydration, and catalytic oxidation in a closed solvent loop.</p>
+                </div>
+                <a href="technology.html" class="card-link">Explore Process Design →</a>
+            </div>
+
+            <div class="overview-card">
+                <div>
+                    <h3>Material & Market Metrics</h3>
+                    <p>Technical performance metrics comparing PEF with petroleum-based PET, accompanied by global market growth models up to 2035.</p>
+                </div>
+                <a href="performance.html" class="card-link">View Performance Data →</a>
+            </div>
+
+            <div class="overview-card">
+                <div>
+                    <h3>Team & Institution</h3>
+                    <p>Meet Team I2D-UULM and the faculty supervisors at the Institute of Chemical Engineering, Universität Ulm.</p>
+                </div>
+                <a href="team.html" class="card-link">Meet the Team →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo">Beyond PET</div>
+        <p>Unlocking High-Performance PEF from Cellulosic Biomass — Universität Ulm</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="technology.html">Technology</a>
+            <a href="performance.html">Performance</a>
+            <a href="team.html">Team</a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Team I2D-UULM — chemPLANT Competition | Universität Ulm</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+        // Three.js 3D Monomer Animation
+        const canvasContainer = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        canvasContainer.appendChild(renderer.domElement);
+
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 180;
+        const posArray = new Float32Array(particlesCount * 3);
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 14;
+        }
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const particlesMaterial = new THREE.PointsMaterial({ size: 0.05, color: 0x2dd4bf, transparent: true, opacity: 0.6 });
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+
+        const R_BENZENE = 1.0;
+        const R_FURAN = 0.851;
+        const STUB_LEN = 0.62;
+        const UP = new THREE.Vector3(0, 1, 0);
+        const CARBON_COLOR = new THREE.Color(0x5eead4);
+        const OXYGEN_COLOR = new THREE.Color(0xfbbf24);
+
+        const bondMaterial = new THREE.MeshBasicMaterial({ color: 0x2dd4bf, transparent: true, opacity: 0.38 });
+        const carbonMaterial = new THREE.MeshBasicMaterial({ color: 0x5eead4, transparent: true, opacity: 0.5 });
+        const acidOxygenMaterial = new THREE.MeshBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.6 });
+        const aromaticMaterial = new THREE.MeshBasicMaterial({ color: 0x2dd4bf, transparent: true, opacity: 0.16 });
+
+        const atomGeometry = new THREE.SphereGeometry(0.11, 12, 12);
+        const bondGeometry = new THREE.CylinderGeometry(0.032, 0.032, 1, 8);
+        const aromaticGeometry = new THREE.TorusGeometry(0.46, 0.012, 8, 48);
+
+        function orientBond(mesh, a, b) {
+            const dir = new THREE.Vector3().subVectors(b, a);
+            const len = dir.length();
+            if (len < 0.02) { mesh.visible = false; return; }
+            mesh.visible = true;
+            mesh.position.copy(a).add(b).multiplyScalar(0.5);
+            mesh.scale.set(1, len, 1);
+            mesh.quaternion.setFromUnitVectors(UP, dir.normalize());
+        }
+
+        function makeMonomer() {
+            const group = new THREE.Group();
+            const benzene = [], furan = [];
+            for (let i = 0; i < 6; i++) {
+                const a = Math.PI / 2 + i * Math.PI / 3;
+                benzene.push(new THREE.Vector3(Math.cos(a) * R_BENZENE, Math.sin(a) * R_BENZENE, 0));
+            }
+            for (let i = 0; i < 5; i++) {
+                const a = Math.PI / 2 + i * 2 * Math.PI / 5;
+                furan.push(new THREE.Vector3(Math.cos(a) * R_FURAN, Math.sin(a) * R_FURAN, 0));
+            }
+            const targets = [furan[0], furan[1], furan[2], furan[3], furan[4], furan[0]];
+            const atoms = [], bonds = [];
+            const apexMaterial = carbonMaterial.clone();
+            for (let i = 0; i < 6; i++) {
+                atoms.push(new THREE.Mesh(atomGeometry, i === 0 ? apexMaterial : carbonMaterial));
+                group.add(atoms[i]);
+                bonds.push(new THREE.Mesh(bondGeometry, bondMaterial));
+                group.add(bonds[i]);
+            }
+            const stubBonds = [], stubCaps = [];
+            for (let k = 0; k < 2; k++) {
+                stubBonds.push(new THREE.Mesh(bondGeometry, bondMaterial));
+                stubCaps.push(new THREE.Mesh(atomGeometry, acidOxygenMaterial));
+                group.add(stubBonds[k], stubCaps[k]);
+            }
+            const aromatic = new THREE.Mesh(aromaticGeometry, aromaticMaterial);
+            group.add(aromatic);
+            group.userData = { benzene, targets, atoms, bonds, stubBonds, stubCaps, aromatic, apexMaterial };
+            return group;
+        }
+
+        const SUBSTITUTED = [1, 4];
+        function updateMonomer(group, t) {
+            const d = group.userData;
+            const pos = [];
+            for (let i = 0; i < 6; i++) pos.push(d.benzene[i].clone().lerp(d.targets[i], t));
+            for (let i = 0; i < 6; i++) {
+                d.atoms[i].position.copy(pos[i]);
+                orientBond(d.bonds[i], pos[i], pos[(i + 1) % 6]);
+            }
+            d.atoms[5].scale.setScalar(Math.max(1 - t, 0.001));
+            d.atoms[0].scale.setScalar(1 + 0.3 * t);
+            d.apexMaterial.color.copy(CARBON_COLOR).lerp(OXYGEN_COLOR, t);
+            SUBSTITUTED.forEach((idx, k) => {
+                const base = pos[idx];
+                const tip = base.clone().add(base.clone().normalize().multiplyScalar(STUB_LEN));
+                orientBond(d.stubBonds[k], base, tip);
+                d.stubCaps[k].position.copy(tip);
+            });
+            d.aromatic.scale.setScalar(1 + (R_FURAN / R_BENZENE - 1) * t);
+        }
+
+        function morphPhase(time, offset) {
+            const smooth = (x) => x * x * (3 - 2 * x);
+            const p = (((time + offset) % 12) / 12);
+            if (p < 0.34) return 0;
+            if (p < 0.50) return smooth((p - 0.34) / 0.16);
+            if (p < 0.84) return 1;
+            return 1 - smooth((p - 0.84) / 0.16);
+        }
+
+        const rings = [];
+        for (let i = 0; i < 5; i++) {
+            const mol = makeMonomer();
+            mol.position.set((Math.random() - 0.5) * 8, (Math.random() - 0.5) * 5, (Math.random() - 0.5) * 3);
+            mol.scale.setScalar(0.4 + Math.random() * 0.5);
+            mol.userData.offset = i * 2.4;
+            mol.userData.baseY = mol.position.y;
+            mol.userData.spinSpeed = 0.06 + Math.random() * 0.06;
+            updateMonomer(mol, 0);
+            scene.add(mol);
+            rings.push(mol);
+        }
+
+        camera.position.z = 5;
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const elapsedTime = clock.getElapsedTime();
+            particlesMesh.rotation.y = elapsedTime * 0.04;
+            rings.forEach((mol, i) => {
+                const u = mol.userData;
+                mol.rotation.z = elapsedTime * u.spinSpeed;
+                mol.position.y = u.baseY + Math.sin(elapsedTime * 0.5 + i) * 0.1;
+                updateMonomer(mol, morphPhase(elapsedTime, u.offset));
+            });
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

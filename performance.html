@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance & Market | Beyond PET</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+            chemPLANT 2026
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="technology.html">Technology & Process</a></li>
+            <li><a href="performance.html" class="active">Performance & Market</a></li>
+            <li><a href="team.html">Team & Institute</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </nav>
+
+    <header class="page-header">
+        <span class="badge">Material Science & Economics</span>
+        <h1>PEF vs. PET Performance</h1>
+        <p>Poly(ethylene furanoate) replaces fossil PET with enhanced gas barrier properties and a substantially lower carbon footprint.</p>
+    </header>
+
+    <section>
+        <div class="section-header">
+            <span class="section-tag">Property Comparison</span>
+            <h2 class="section-title">Physical & Mechanical Specs</h2>
+            <p class="section-desc">Head-to-head comparison of key thermoplastic criteria.</p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>PEF (Bio-based)</th>
+                        <th>PET (Fossil-based)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Glass Transition Temperature (Tg)</td>
+                        <td class="pef-value">~86°C <span class="winner-badge">WINNER</span></td>
+                        <td class="pet-value">~76°C</td>
+                    </tr>
+                    <tr>
+                        <td>Melting Temperature (Tm)</td>
+                        <td class="pef-value">~211°C</td>
+                        <td class="pet-value">~247°C</td>
+                    </tr>
+                    <tr>
+                        <td>Storage Modulus (GPa)</td>
+                        <td class="pef-value">~3.28 <span class="winner-badge">WINNER</span></td>
+                        <td class="pet-value">~2.12</td>
+                    </tr>
+                    <tr>
+                        <td>Yield Stress (MPa)</td>
+                        <td class="pef-value">~90–100 <span class="winner-badge">WINNER</span></td>
+                        <td class="pet-value">~50–60</td>
+                    </tr>
+                    <tr>
+                        <td>O₂ Permeability</td>
+                        <td class="pef-value">0.01 (10× lower) <span class="winner-badge">WINNER</span></td>
+                        <td class="pet-value">0.11</td>
+                    </tr>
+                    <tr>
+                        <td>CO₂ Permeability</td>
+                        <td class="pef-value">~19× less than PET <span class="winner-badge">WINNER</span></td>
+                        <td class="pet-value">—</td>
+                    </tr>
+                    <tr>
+                        <td>H₂O Vapour Permeability</td>
+                        <td class="pef-value">~2× less than PET <span class="winner-badge">WINNER</span></td>
+                        <td class="pet-value">—</td>
+                    </tr>
+                    <tr>
+                        <td>Bio-based Carbon</td>
+                        <td class="pef-value">100% <span class="winner-badge">WINNER</span></td>
+                        <td class="pet-value">0%</td>
+                    </tr>
+                    <tr>
+                        <td>CO₂ Reduction vs. Fossil</td>
+                        <td class="pef-value">-45% to -55% <span class="winner-badge">WINNER</span></td>
+                        <td class="pet-value">0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="chart-section">
+            <div class="section-header">
+                <span class="section-tag" style="background: rgba(255,255,255,0.2); color: #fff;">Visualized Metrics</span>
+                <h2 class="section-title">Quantitative Benchmarks</h2>
+            </div>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>O₂ Permeability (Lower is better)</h3>
+                    <div class="bar-chart">
+                        <div class="bar-group">
+                            <div class="bar bar-pef" style="height: 18px;"><span class="bar-value">0.01</span></div>
+                            <span class="bar-label">PEF</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-pet" style="height: 140px;"><span class="bar-value">0.11</span></div>
+                            <span class="bar-label">PET</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Storage Modulus (GPa)</h3>
+                    <div class="bar-chart">
+                        <div class="bar-group">
+                            <div class="bar bar-pef" style="height: 140px;"><span class="bar-value">3.28</span></div>
+                            <span class="bar-label">PEF</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-pet" style="height: 90px;"><span class="bar-value">2.12</span></div>
+                            <span class="bar-label">PET</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Yield Stress (MPa)</h3>
+                    <div class="bar-chart">
+                        <div class="bar-group">
+                            <div class="bar bar-pef" style="height: 140px;"><span class="bar-value">95</span></div>
+                            <span class="bar-label">PEF</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar bar-pet" style="height: 80px;"><span class="bar-value">55</span></div>
+                            <span class="bar-label">PET</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--white);">
+        <div class="section-header">
+            <span class="section-tag">Economics</span>
+            <h2 class="section-title">Commercial Opportunity</h2>
+            <p class="section-desc">Market scalability targeting the ~70 Mt/a global PET packaging market.</p>
+        </div>
+
+        <div class="market-grid">
+            <div class="market-card">
+                <div class="market-value">$1.93B</div>
+                <div>Projected FDCA Market by 2035</div>
+            </div>
+            <div class="market-card">
+                <div class="market-value">32.19 Mt</div>
+                <div>PET Bottle Market by 2030</div>
+            </div>
+            <div class="market-card">
+                <div class="market-value">45–55%</div>
+                <div>CO₂ Reduction vs. Fossil PET</div>
+            </div>
+            <div class="market-card">
+                <div class="market-value">10 kt/a</div>
+                <div>Cellulose Input Capacity</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo">Beyond PET</div>
+        <p>Unlocking High-Performance PEF from Cellulosic Biomass — Universität Ulm</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="technology.html">Technology</a>
+            <a href="performance.html">Performance</a>
+            <a href="team.html">Team</a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Team I2D-UULM — chemPLANT Competition | Universität Ulm</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+    </script>
+</body>
+</html>
