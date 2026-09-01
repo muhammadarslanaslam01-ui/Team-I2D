@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond PET | chemPLANT 2026 | Universität Ulm</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="A biorefinery concept converting wood-based cellulose to FDCA for PEF production. Team I2D-UULM, chemPLANT 2026, Universität Ulm.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="./styles.css">
     <style>
@@ -119,9 +120,9 @@
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="technology.html">Technology & Process</a></li>
-            <li><a href="performance.html">Performance & Market</a></li>
-            <li><a href="team.html">Team & Institute</a></li>
+            <li><a href="technology.html">Technology &amp; Process</a></li>
+            <li><a href="performance.html">Performance &amp; Market</a></li>
+            <li><a href="team.html">Team &amp; Institute</a></li>
         </ul>
         <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
     </nav>
@@ -226,10 +227,19 @@
         mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
 
         const canvasContainer = document.getElementById('canvas-container');
+
+        // If the three.js CDN is blocked or offline, skip the animation instead of
+        // throwing. The hero gradient still renders and the rest of the page works.
+        if (typeof THREE === 'undefined') {
+            console.warn('three.js did not load: hero animation skipped.');
+        } else {
+        const heroWidth = () => canvasContainer.clientWidth || window.innerWidth;
+        const heroHeight = () => canvasContainer.clientHeight || window.innerHeight;
+
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, heroWidth() / heroHeight(), 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(heroWidth(), heroHeight());
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         canvasContainer.appendChild(renderer.domElement);
 
@@ -350,6 +360,7 @@
 
         function animate() {
             requestAnimationFrame(animate);
+            if (document.hidden) { return; }
             const elapsedTime = clock.getElapsedTime();
             particlesMesh.rotation.y = elapsedTime * 0.04;
             rings.forEach((mol, i) => {
@@ -363,10 +374,11 @@
         animate();
 
         window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.aspect = heroWidth() / heroHeight();
             camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setSize(heroWidth(), heroHeight());
         });
+        }
     </script>
 </body>
 </html>
